@@ -1,28 +1,11 @@
 .content {
-  max-width: 1184px;
+  max-width: 1200px;
 
 }
 
-@media screen and (max-width: 1024px) {
-  .content {
-    max-width: 1024px;
-  }
-}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 300px) {
   .content {
-    max-width: 768px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .content {
-    max-width: 600px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .content {
-    max-width: 320px;
+    max-width: 300px;
   }
 }
