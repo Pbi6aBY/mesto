@@ -12,13 +12,19 @@
 @import url('../blocks/profile/__title/profile__title.css');
 @import url('../blocks/profile/__subtitle/profile__subtitle.css');
 @import url('../blocks/profile/__caption/profile__caption.css');
+@import url('../blocks/profile/__submit/profile__submit.css');
+@import url('../blocks/profile/__info/profile__info.css');
 
 @import url('../blocks/cards/cards.css');
+@import url('../blocks/cards/__list/cards__list.css');
 @import url('../blocks/cards/__item/cards__item.css');
 @import url('../blocks/cards/__image/cards__image.css');
+@import url('../blocks/cards/__info/cards__info.css');
 @import url('../blocks/cards/__title/cards__title.css');
 @import url('../blocks/cards/__icon/cards__icon.css');
 
+@import url('../blocks/popup/popup.css');
+@import url('../blocks/popup/__container/popup__container.css');
 
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');

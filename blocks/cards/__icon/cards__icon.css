@@ -1,3 +1,10 @@
-.cards__icon{
-
+.cards__icon {
+  width: 22px;
+  height: 19px;
+  background-color: #fff;
+  background-image: url("../../../images/Hurt.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  align-self: center;
 }

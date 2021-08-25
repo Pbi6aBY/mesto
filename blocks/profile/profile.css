@@ -3,6 +3,5 @@
   margin: 0 200px 50px;
   max-width: 880px;
   align-items: center;
-
-
+  justify-content: space-between;
 }

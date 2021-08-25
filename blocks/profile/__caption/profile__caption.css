@@ -1,5 +1,11 @@
 .profile__caption{
-  background-image: url("../../../images/Cross.svg");
-  border-style: 2px solid #fff ;
-  max-width: 150px;
-}
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff ;
+  background-color:#000;
+  background-image: url("../../../images/pen.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  align-self: center;
+  }
