@@ -1,11 +1,13 @@
-.profile__caption{
+.profile__caption {
+  padding: 0;
+  margin: 0;
   width: 24px;
   height: 24px;
-  border: 1px solid #fff ;
-  background-color:#000;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: #000;
   background-image: url("../../../images/pen.svg");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
   align-self: center;
-  }
+}
