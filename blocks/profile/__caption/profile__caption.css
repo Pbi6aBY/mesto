@@ -11,3 +11,10 @@
   cursor: pointer;
   align-self: center;
 }
+
+@media screen and (max-width: 320px) {
+  .profile__caption {
+    width: 18px;
+    height: 18px;
+  }
+}
