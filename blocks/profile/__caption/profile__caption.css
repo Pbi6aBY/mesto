@@ -10,9 +10,15 @@
   background-position: center;
   cursor: pointer;
   align-self: center;
+  opacity: 1;
+  transition: opacity 1s linear normal;
 }
 
-@media screen and (max-width: 320px) {
+.profile__caption:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1000px) {
   .profile__caption {
     width: 18px;
     height: 18px;

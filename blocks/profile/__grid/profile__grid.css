@@ -9,14 +9,14 @@
   align-items: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1000px) {
   .profile__grid {
     margin: 0;
     grid-template-columns: minmax(auto, 218px) auto;
     grid-column-gap: 10px;
     grid-row-gap: 8px;
     justify-items: end;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     max-width: 284px;
   }
 }

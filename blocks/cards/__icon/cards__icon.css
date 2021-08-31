@@ -7,7 +7,13 @@
   background-image: url("../../../images/Hurt.svg");
   background-repeat: no-repeat;
   background-position: center;
+  border: none;
   cursor: pointer;
   align-self: center;
+  opacity: 1;
+  transition: opacity 1s linear normal;
 }
 
+.cards__icon:hover {
+  opacity: 0.5;
+}

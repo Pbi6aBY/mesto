@@ -9,13 +9,30 @@
   background-position: center;
   cursor: pointer;
   padding: 0;
+  opacity: 1;
+  transition: opacity 1s linear normal;
+}
 
+.profile__submit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1060px) {
+  .profile__submit {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .profile__submit {
+    width: 200px;
+    margin: 0 19px;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .profile__submit {
     width: 282px;
     margin: 0 19px;
-
   }
 }
