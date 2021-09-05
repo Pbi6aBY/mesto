@@ -32,7 +32,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Карачаевск</h2>
-              <button class="cards__icon"></button>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
           <li class="cards__item">
@@ -43,7 +43,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Домбай</h2>
-              <div class="cards__icon"></div>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
           <li class="cards__item">
@@ -54,7 +54,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Эльбрус</h2>
-              <div class="cards__icon"></div>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
           <li class="cards__item">
@@ -65,7 +65,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Домбай</h2>
-              <div class="cards__icon"></div>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
           <li class="cards__item">
@@ -76,7 +76,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Эльбрус</h2>
-              <div class="cards__icon"></div>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
           <li class="cards__item">
@@ -87,7 +87,7 @@
             />
             <div class="cards__info">
               <h2 class="cards__title">Карачаево-Черкесия</h2>
-              <div class="cards__icon"></div>
+              <button type="button" class="cards__icon"></button>
             </div>
           </li>
         </ul>
@@ -96,17 +96,17 @@
     <footer class="footer">
       <p class="footer__copyright">&COPY; 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
-        <button class="popup__close"></button>
+        <button type="button" class="popup__close"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
-          <input type="text" name="fish" class="popup__text-name" />
-          <input type="text" name="cat" class="popup__text-about" />
+        <form name="form" class="popup__form">
+          <input type="text" name="text" class="popup_input_style popup_type_name" />
+          <input type="text" name="about" class="popup_input_style popup_type_about" />
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
-    </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

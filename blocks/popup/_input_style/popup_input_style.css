@@ -1,4 +1,4 @@
-.popup__text-name {
+.popup_input_style {
   max-width: 358px;
   min-height: 27px;
   border-style: none;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__text-name {
+  .popup_input_style {
     max-width: 238px;
     margin: 0 22px 30px;
   }
