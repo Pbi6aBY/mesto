@@ -1,8 +1,6 @@
-.cards__item {
-  margin: 0;
-  padding: 0;
+.popup__big-image{
   display: flex;
   flex-direction: column;
-  max-width: 282px;
+  justify-content: center;
   position: relative;
 }
