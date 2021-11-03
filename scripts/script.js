@@ -1,6 +1,6 @@
 const openPopupButton = document.querySelector(".profile__caption");
 
-const profilePopup = document.querySelector(".profile_popup");
+const profilePopup = document.querySelector(".popup_profile");
 const closePopupButton = profilePopup.querySelector(".popup__close");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
@@ -8,10 +8,10 @@ const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_about");
 const locationInput = document.querySelector(".popup__input_type_location");
 const linkInput = document.querySelector(".popup__input_type_link");
-const popupPlace = document.querySelector(".new_card_popup");
+const popupPlace = document.querySelector(".popup_new_card");
 const createPopupButton = document.querySelector(".profile__submit");
 const closePopupPlaceButton = popupPlace.querySelector(".popup__close");
-const bigImagePopup = document.querySelector(".image_popup");
+const bigImagePopup = document.querySelector(".popup_image");
 const closePopupBigImageButton = bigImagePopup.querySelector(".popup__close");
 const popupImage = bigImagePopup.querySelector(".popup__image");
 const popupSignature = bigImagePopup.querySelector(".popup__signature");
