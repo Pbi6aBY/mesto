@@ -18,16 +18,16 @@ const locationInput = document.querySelector(".popup__input_type_location");
 const linkInput = document.querySelector(".popup__input_type_link");
 const popupPlace = document.querySelector(".popup_new_card");
 const createPopupButton = document.querySelector(".profile__submit");
-const savePopupButton = document.querySelector(".popup__save_card");
+const savePopupButton = popupPlace.querySelector(".popup__save");
 const closePopupPlaceButton = popupPlace.querySelector(".popup__close");
 const bigImagePopup = document.querySelector(".popup_image");
 const closePopupBigImageButton = bigImagePopup.querySelector(".popup__close");
 const popupImage = bigImagePopup.querySelector(".popup__image");
 const popupSignature = bigImagePopup.querySelector(".popup__signature");
 
-function disableSubmitButtonPlace(popup){
+function disableSubmitButtonPlace(popup) {
   popup.classList.add("popup__button_disabled");
-};
+}
 
 function togglePopup(popup) {
   popup.classList.toggle("popup_opened");
@@ -47,8 +47,8 @@ function openPopup() {
 }
 
 function openPopupPlace() {
-  linkInput.value = '';
-  locationInput.value = '';
+  linkInput.value = "";
+  locationInput.value = "";
   disableSubmitButtonPlace(savePopupButton);
   hideErrors(popupPlace);
   document.addEventListener("keydown", closeProfile);
