@@ -1,3 +1,12 @@
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save",
+  inactiveButtonClass: "popup__button_disabled", //создать класс //есть
+  inputErrorClass: "popup__input_type_error", //создать класс и span
+  errorClass: "popup__error_visible", ////создать класс
+};
+
 const openPopupButton = document.querySelector(".profile__caption");
 
 const profilePopup = document.querySelector(".popup_profile");
@@ -22,12 +31,15 @@ function togglePopup(popup) {
 
 function toggleProfile() {
   togglePopup(profilePopup);
+  document.removeEventListener("keydown", closeProfile);
 }
 
 function openPopup() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
+  hideErrors(profilePopup);
   toggleProfile();
+  document.addEventListener("keydown", closeProfile);
 }
 
 function togglePopupPlace() {
@@ -136,3 +148,34 @@ function bigSize(evt) {
   popupSignature.textContent = evt.target.alt;
   togglePopupBig();
 }
+
+profilePopup.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup")) {
+    toggleProfile();
+  }
+});
+
+function clickEmpty(evt) {
+  if (evt.target.classList.contains("popup")) {
+    toggleProfile();
+  }
+}
+
+function closeProfile(evt) {
+  if (evt.key === "Escape") {
+    const popup = document.querySelector(".popup_opened");
+    if (popup) {
+      toggleProfile();
+    }
+  }
+}
+
+function hideErrors(parent) {
+  const inputs = parent.querySelectorAll("input");
+  const form = parent.querySelector("form");
+  inputs.forEach((input) => {
+    checkInputValidity(form, input, config.inputErrorClass, config.errorClass);
+  });
+}
+
+enableValidation(config);

@@ -44,7 +44,7 @@
             id="name-card"
             placeholder="Имя"
           />
-          <span id="name-card-error" class="error"></span>
+          <span id="name-card-error" class="popup__error"></span>
           <input
             required
             minlength="2"
@@ -55,7 +55,7 @@
             id="about-card"
             placeholder="О себе"
           />
-          <span id="about-card-error" class="error"></span>
+          <span id="about-card-error" class="popup__error"></span>
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
@@ -75,17 +75,17 @@
             class="popup__input popup__input_type_location"
             placeholder="Название"
           />
-          <span id="place-error" class="error"></span>
+          <span id="place-error" class="popup__error"></span>
           <input
             required
             type="url"
-            name="about"
+            name="site"
             id="link"
             class="popup__input popup__input_type_link"
             placeholder="Ссылка на картинку"
           />
-          <span id="link-error" class="error"></span>
-          <button type="submit" class="popup__create">Создать</button>
+          <span id="link-error" class="popup__error"></span>
+          <button type="submit" class="popup__save">Создать</button>
         </form>
       </div>
     </div>
@@ -114,7 +114,8 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/script.js"></script>
     <script src="./scripts/validate.js"></script>
+    <script src="./scripts/script.js"></script>
+
   </body>
 </html>
