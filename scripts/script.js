@@ -2,13 +2,12 @@ const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__save",
-  inactiveButtonClass: "popup__button_disabled", //создать класс //есть
-  inputErrorClass: "popup__input_type_error", //создать класс и span
-  errorClass: "popup__error_visible", ////создать класс
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
 };
 
 const openPopupButton = document.querySelector(".profile__caption");
-
 const profilePopup = document.querySelector(".popup_profile");
 const closePopupButton = profilePopup.querySelector(".popup__close");
 const profileTitle = document.querySelector(".profile__title");
@@ -42,20 +41,33 @@ function openPopup() {
   document.addEventListener("keydown", closeProfile);
 }
 
-function togglePopupPlace() {
+function openPopupPlace() {
+  hideErrors(popupPlace);
+  document.addEventListener("keydown", closeProfile);
   togglePopup(popupPlace);
 }
 
-function togglePopupBig() {
+function closePopupPlace() {
+  togglePopup(popupPlace);
+  document.removeEventListener("keydown", closeProfile);
+}
+
+function openPopupBig() {
   togglePopup(bigImagePopup);
+  document.addEventListener("keydown", closeProfile);
+}
+
+function closePopupBig() {
+  togglePopup(bigImagePopup);
+  document.removeEventListener("keydown", closeProfile);
 }
 
 openPopupButton.addEventListener("click", openPopup);
 closePopupButton.addEventListener("click", toggleProfile);
 
-createPopupButton.addEventListener("click", togglePopupPlace);
-closePopupPlaceButton.addEventListener("click", togglePopupPlace);
-closePopupBigImageButton.addEventListener("click", togglePopupBig);
+createPopupButton.addEventListener("click", openPopupPlace);
+closePopupPlaceButton.addEventListener("click", closePopupPlace);
+closePopupBigImageButton.addEventListener("click", closePopupBig);
 
 const formElement = profilePopup.querySelector(".popup__form");
 
@@ -74,7 +86,7 @@ function formSubmitPlace(event) {
   prependCard(card);
   locationInput.value = "";
   linkInput.value = "";
-  togglePopupPlace();
+  closePopupPlace();
 }
 
 formElement.addEventListener("submit", formSubmitHandler);
@@ -146,18 +158,17 @@ function deleteCard(evt) {
 function bigSize(evt) {
   popupImage.src = evt.target.src;
   popupSignature.textContent = evt.target.alt;
-  togglePopupBig();
+  openPopupBig();
 }
 
-profilePopup.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("popup")) {
-    toggleProfile();
-  }
-});
+profilePopup.addEventListener("click", clickEmpty);
+popupPlace.addEventListener("click", clickEmpty);
+bigImagePopup.addEventListener("click", clickEmpty);
 
 function clickEmpty(evt) {
   if (evt.target.classList.contains("popup")) {
-    toggleProfile();
+    const popup = document.querySelector(".popup_opened");
+    togglePopup(popup); //
   }
 }
 
@@ -165,16 +176,22 @@ function closeProfile(evt) {
   if (evt.key === "Escape") {
     const popup = document.querySelector(".popup_opened");
     if (popup) {
-      toggleProfile();
+      togglePopup(popup);
     }
   }
 }
 
 function hideErrors(parent) {
   const inputs = parent.querySelectorAll("input");
-  const form = parent.querySelector("form");
+
   inputs.forEach((input) => {
-    checkInputValidity(form, input, config.inputErrorClass, config.errorClass);
+    const errorElement = parent.querySelector(`#${input.id}-error`);
+    hideInputError(
+      input,
+      errorElement,
+      config.inputErrorClass,
+      config.errorClass
+    );
   });
 }
 
