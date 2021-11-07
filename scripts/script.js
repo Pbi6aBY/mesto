@@ -37,11 +37,14 @@ function openPopup() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
   hideErrors(profilePopup);
+  disableSubmitButton(createPopupButton, config.inputErrorClass);
   toggleProfile();
   document.addEventListener("keydown", closeProfile);
 }
 
 function openPopupPlace() {
+  linkInput.value = '';
+  locationInput.value = '';
   hideErrors(popupPlace);
   document.addEventListener("keydown", closeProfile);
   togglePopup(popupPlace);
