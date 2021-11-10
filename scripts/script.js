@@ -29,17 +29,17 @@ function disableSubmitButtonPlace(popup) {
   popup.classList.add("popup__button_disabled");
 }
 
-function handleEscPressed(popup) {
+function togglePopupListeners(popup) {
   if (popup.classList.contains("popup_opened")) {
-    document.addEventListener("keydown", closeProfile);
+    document.addEventListener("keydown", handleEscPressed);
   } else {
-    document.removeEventListener("keydown", closeProfile);
+    document.removeEventListener("keydown", handleEscPressed);
   }
 }
 
 function togglePopup(popup) {
   popup.classList.toggle("popup_opened");
-  handleEscPressed(popup);
+  togglePopupListeners(popup);
 }
 
 function toggleProfile() {
@@ -172,18 +172,18 @@ function bigSize(evt) {
   openPopupBig();
 }
 
-profilePopup.addEventListener("click", clickEmpty);
-popupPlace.addEventListener("click", clickEmpty);
-bigImagePopup.addEventListener("click", clickEmpty);
+profilePopup.addEventListener("click", handleOverlayClick);
+popupPlace.addEventListener("click", handleOverlayClick);
+bigImagePopup.addEventListener("click", handleOverlayClick);
 
-function clickEmpty(evt) {
+function handleOverlayClick(evt) {
   if (evt.target.classList.contains("popup")) {
     const popup = document.querySelector(".popup_opened");
     togglePopup(popup);
   }
 }
 
-function closeProfile(evt) {
+function handleEscPressed(evt) {
   if (evt.key === "Escape") {
     const popup = document.querySelector(".popup_opened");
     if (popup) {
